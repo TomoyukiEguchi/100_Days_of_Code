@@ -30,6 +30,10 @@ timmy.penup()
 timmy.hideturtle()
 turtle.colormode(255)
 
+timmy.setheading(225)
+timmy.forward(250)
+timmy.setheading(0)
+
 
 def draw_hirst_painting():
     for i in range(10):
@@ -39,21 +43,23 @@ def draw_hirst_painting():
             timmy.left(90)
             timmy.forward(50)
             timmy.left(90)
+            timmy.forward(450)
+            timmy.setheading(0)
         else:
             timmy.forward(50)
 
-    for i in range(10):
-        color = random.choice(color_list)
-        timmy.dot(20, color)
-        if i == 9:
-            timmy.right(90)
-            timmy.forward(50)
-            timmy.right(90)
-        else:
-            timmy.forward(50)
+    # for i in range(10):
+    #     color = random.choice(color_list)
+    #     timmy.dot(20, color)
+    #     if i == 9:
+    #         timmy.right(90)
+    #         timmy.forward(50)
+    #         timmy.right(90)
+    #     else:
+    #         timmy.forward(50)
 
 
-num = 5
+num = 10
 for _ in range(num):
     draw_hirst_painting()
 

@@ -37,13 +37,31 @@ import pandas
 # print((celsius * 1.8) + 32)
 
 # Create a dataframe from scratch
+# data_dict = {
+#     "students": ["Amy", "James", "Angela"],
+#     "scores": [76, 56, 65]
+# }
+
+# data = pandas.DataFrame(data_dict)
+# print(data)
+# data.to_csv("new_data.csv")
+
+data = pandas.read_csv("2018_Central_Park_Squirrel_Census_-_Squirrel_Data.csv")
+
+gray_squirrel = data[data["Primary Fur Color"] == "Gray"]
+cinnamon_squirrel = data[data["Primary Fur Color"] == "Cinnamon"]
+black_squirrel = data[data["Primary Fur Color"] == "Black"]
+
+num_gray_squirrel = (len(gray_squirrel))
+num_cinnamon_squirrel = (len(cinnamon_squirrel))
+num_black_squirrel = (len(black_squirrel))
+
 data_dict = {
-    "students": ["Amy", "James", "Angela"],
-    "scores": [76, 56, 65]
+    "Fur Color": ["Gray", "Cinnamon", "Black"],
+    "Count": [num_gray_squirrel, num_cinnamon_squirrel, num_black_squirrel]
 }
 
-data = pandas.DataFrame(data_dict)
-# print(data)
-data.to_csv("new_data.csv")
-
-
+# print(data_dict)
+df = pandas.DataFrame(data_dict)
+print(df)
+df.to_csv("squirrel_count.csv")

@@ -35,3 +35,27 @@ passed_students = {
 print(passed_students)
 
 
+# exercise 1
+numbers = [1, 1, 2, 3, 5, 8, 13, 21, 34, 55]
+squared_numbers = [num**2 for num in numbers]
+
+print(squared_numbers)
+
+
+# exercise 2
+numbers = [1, 1, 2, 3, 5, 8, 13, 21, 34, 55]
+result = [num for num in numbers if num % 2 == 0]
+
+print(result)
+
+
+# exercise 3
+
+with open("file1.txt") as file1:
+    file1_data = file1.readlines()
+
+with open("file2.txt") as file2:
+    file2_data = file2.readlines()
+
+result = [int(num) for num in file1_data if num in file2_data]
+print(result)

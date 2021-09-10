@@ -2,11 +2,15 @@ import requests
 from datetime import datetime
 import smtplib
 import time
+from dotenv import load_dotenv
+import os
+
+load_dotenv()
 
 MY_LAT = 35.689487  # My latitude: Tokyo
 MY_LONG = 139.691711  # My longitude: Tokyo
-MY_EMAIL = "tonigundersson@gmail.com"
-PASSWORD = "happynewyearandgodjul!"
+MY_EMAIL = os.getenv("MY_EMAIL")
+PASSWORD = os.getenv("PASSWORD")
 
 
 def is_iss_overhead():

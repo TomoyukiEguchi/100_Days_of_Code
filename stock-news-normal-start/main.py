@@ -1,6 +1,9 @@
 import requests
 from twilio.rest import Client
+from dotenv import load_dotenv
+import os
 
+load_dotenv()
 
 STOCK_NAME = "TSLA"
 COMPANY_NAME = "Tesla Inc"
@@ -8,11 +11,11 @@ COMPANY_NAME = "Tesla Inc"
 STOCK_ENDPOINT = "https://www.alphavantage.co/query"
 NEWS_ENDPOINT = "https://newsapi.org/v2/everything"
 
-ALPHA_VANTAGE_API_KEY = ""
-NEWS_API_KEY = ""
+ALPHA_VANTAGE_API_KEY = os.getenv("ALPHA_VANTAGE_API_KEY")
+NEWS_API_KEY = os.getenv("NEWS_API_KEY")
 
 TWILIO_ACCOUNT_SID = "AC86417573f007073bd506b0a985670542"
-TWILIO_AUTH_TOKEN = ""
+TWILIO_AUTH_TOKEN = os.getenv("TWILIO_AUTH_TOKEN")
 
 parameters = {
     "function": "TIME_SERIES_DAILY",
@@ -62,7 +65,7 @@ print(percentage_difference)
 #TODO 5. - If TODO4 percentage is greater than 5 then print("Get News").
 #TODO 6. - Instead of printing ("Get News"), use the News API to get articles related to the COMPANY_NAME.
 
-if abs(percentage_difference) > 5:
+if abs(percentage_difference) == 0:
 
     news_parameters = {
         "qInTitle": COMPANY_NAME,

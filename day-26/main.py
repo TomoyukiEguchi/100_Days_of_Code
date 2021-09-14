@@ -59,3 +59,28 @@ with open("file2.txt") as file2:
 
 result = [int(num) for num in file1_data if num in file2_data]
 print(result)
+
+
+# exercise 4
+
+sentence = "What is the Airspeed Velocity of an Unladen Swallow?"
+split_sentence = sentence.split()
+print(split_sentence)
+
+result = {item: len(item) for item in split_sentence}
+print(result)
+
+
+# exercise 5
+weather_c = {
+    "Monday": 12,
+    "Tuesday": 14,
+    "Wednesday": 15,
+    "Thursday": 14,
+    "Friday": 21,
+    "Saturday": 22,
+    "Sunday": 24,
+}
+
+temp_f = {day_of_week: (temp_c * 9/5) + 32 for (day_of_week, temp_c) in weather_c.items()}
+print(temp_f)
